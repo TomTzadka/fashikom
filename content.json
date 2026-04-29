@@ -1,0 +1,209 @@
+{
+  "he": {
+    "meta": {
+      "title": "שירילי | מטפלת מוסמכת בשיטת פשיקום®",
+      "description": "שחרור כאבי תנועה כרוניים — בגוף ובנפש יחד. שירילי, מטפלת מוסמכת בשיטת פשיקום®."
+    },
+    "lang_toggle": "English",
+    "nav": {
+      "brand": "שירילי",
+      "methods": "השיטה",
+      "about": "אודות",
+      "articles": "מאמרים",
+      "contact": "צור קשר"
+    },
+    "hero": {
+      "badge": "✦ מטפלת מוסמכת בשיטת פשיקום®",
+      "title": "שירילי<br><span>מטפלת בשיטת פשיקום®</span>",
+      "subtitle": "שחרור כאבי תנועה כרוניים — בגוף ובנפש יחד",
+      "cta": "צרו קשר בוואטסאפ"
+    },
+    "methods": {
+      "label": "שיטת פשיקום®",
+      "heading": "מה זו שיטת פשיקום?",
+      "intro": "גישה טיפולית ייחודית שמשחררת כאב כרוני על ידי עבודה עם הקשר העמוק בין תנועה, שריר ורגש.",
+      "cards": [
+        {
+          "icon": "🔗",
+          "color": "lavender",
+          "title": "תקשורת בין-שרירית",
+          "body": "הגוף הוא מערכת אחת. פשיקום® מזהה דפוסי תקשורת לקויים בין קבוצות שרירים, ומשחרר את הכאב מהשורש."
+        },
+        {
+          "icon": "🌀",
+          "color": "mint",
+          "title": "הפרדת תנועה מכאב",
+          "body": "הגוף למד לקשר תנועות מסוימות לכאב. הטיפול עובד ישירות על הדפוסים הללו ומלמד את המערכת דרכים חדשות."
+        },
+        {
+          "icon": "💛",
+          "color": "peach",
+          "title": "גוף ונפש — יחידה אחת",
+          "body": "מאחורי כל כאב פיזי יש לעיתים ממד רגשי-תנועתי. הגישה ההוליסטית של פשיקום® מטפלת בשניהם יחד."
+        }
+      ]
+    },
+    "about": {
+      "label": "על שירילי",
+      "heading": "שירילי",
+      "tagline": "מטפלת מוסמכת בשיטת פשיקום® | מלווה ומחזיקה את המרחב הטיפולי",
+      "bio": [
+        "מזה למעלה מעשר שנים אני מלווה אנשים בתהליך של שחרור כאב כרוני — גופני ונפשי כאחד. הכשרתי המלאה בשיטת פשיקום® נותנת לי כלים עמוקים להבין את הגוף כמערכת אחת, חיה ומדברת.",
+        "אני מאמינה שכל גוף יודע לרפא את עצמו — לעיתים הוא רק צריך עזרה לפצח את הדפוסים שכובלים אותו. בכל טיפול אני מביאה סקרנות, חום ונוכחות מלאה."
+      ],
+      "credentials": ["מוסמכת פשיקום®", "+10 שנות ניסיון", "גישה הוליסטית", "ליווי אישי"],
+      "photo_alt": "תמונה של שירילי",
+      "photo_placeholder": "תמונה של שירילי"
+    },
+    "articles_section": {
+      "label": "מאמרים",
+      "heading": "קצת לקרוא, הרבה לחשוב",
+      "intro": "מאמרים שאני כותבת על כאב, תנועה, גוף ונפש.",
+      "read_more": "קרא עוד",
+      "close": "סגור"
+    },
+    "contact": {
+      "label": "יצירת קשר",
+      "heading": "בואו נדבר",
+      "intro": "שאלות? רוצים לשמוע עוד? כתבו לי — אשמח לענות ולסייע.",
+      "wa_text": "וואטסאפ",
+      "email_text": "שלחי מייל",
+      "wa_message": "שלום שירילי, ראיתי את הדף שלך ואני מעוניין/ת לשמוע עוד על טיפול בשיטת פשיקום® 🌿"
+    },
+    "footer": {
+      "name": "שירילי | מטפלת מוסמכת בשיטת פשיקום®",
+      "copy": "כל הזכויות שמורות"
+    },
+    "wa_float_aria": "שלחי הודעה בוואטסאפ"
+  },
+  "en": {
+    "meta": {
+      "title": "Shirily | Certified Fashicom® Therapist",
+      "description": "Releasing chronic movement pain — body and mind together. Shirily, certified Fashicom® therapist."
+    },
+    "lang_toggle": "עברית",
+    "nav": {
+      "brand": "Shirily",
+      "methods": "The Method",
+      "about": "About",
+      "articles": "Articles",
+      "contact": "Contact"
+    },
+    "hero": {
+      "badge": "✦ Certified Fashicom® Therapist",
+      "title": "Shirily<br><span>Fashicom® Therapist</span>",
+      "subtitle": "Releasing chronic movement pain — body and mind together",
+      "cta": "Contact on WhatsApp"
+    },
+    "methods": {
+      "label": "Fashicom® Method",
+      "heading": "What Is the Fashicom Method?",
+      "intro": "A unique therapeutic approach that releases chronic pain by working with the deep connection between movement, muscle, and emotion.",
+      "cards": [
+        {
+          "icon": "🔗",
+          "color": "lavender",
+          "title": "Inter-Muscular Communication",
+          "body": "The body is one system. Fashicom® identifies faulty communication patterns between muscle groups and releases pain at its root."
+        },
+        {
+          "icon": "🌀",
+          "color": "mint",
+          "title": "Separating Movement from Pain",
+          "body": "The body learned to associate certain movements with pain. The treatment works directly on these patterns, teaching the system new ways."
+        },
+        {
+          "icon": "💛",
+          "color": "peach",
+          "title": "Body and Mind — One Unit",
+          "body": "Behind every physical pain there is often an emotional-movement dimension. Fashicom's holistic approach treats both together."
+        }
+      ]
+    },
+    "about": {
+      "label": "About Shirily",
+      "heading": "Shirily",
+      "tagline": "Certified Fashicom® Therapist | Creating a warm, held therapeutic space",
+      "bio": [
+        "For over ten years I have been accompanying people through the process of releasing chronic pain — physical and emotional alike. My full training in the Fashicom® method gives me deep tools to understand the body as one living, communicating system.",
+        "I believe every body knows how to heal itself — sometimes it just needs help cracking the patterns that bind it. In every treatment I bring curiosity, warmth, and full presence."
+      ],
+      "credentials": ["Fashicom® Certified", "10+ Years Experience", "Holistic Approach", "Personal Guidance"],
+      "photo_alt": "Photo of Shirily",
+      "photo_placeholder": "Photo of Shirily"
+    },
+    "articles_section": {
+      "label": "Articles",
+      "heading": "A Little to Read, A Lot to Think About",
+      "intro": "Articles I write about pain, movement, body and mind.",
+      "read_more": "Read More",
+      "close": "Close"
+    },
+    "contact": {
+      "label": "Contact",
+      "heading": "Let's Talk",
+      "intro": "Questions? Want to hear more? Write to me — I'd love to answer and help.",
+      "wa_text": "WhatsApp",
+      "email_text": "Send Email",
+      "wa_message": "Hello Shirily, I saw your page and I'm interested in hearing more about Fashicom® therapy 🌿"
+    },
+    "footer": {
+      "name": "Shirily | Certified Fashicom® Therapist",
+      "copy": "All rights reserved"
+    },
+    "wa_float_aria": "Send a WhatsApp message"
+  },
+  "articles": [
+    {
+      "id": "chronic-pain",
+      "icon": "🧠",
+      "color": "lavender",
+      "he": {
+        "title": "מה גורם לכאב כרוני? מה שלא לימדו אותנו",
+        "summary": "רבים מאיתנו גדלנו עם התפיסה שכאב שווה נזק. המדע של שני העשורים האחרונים מראה תמונה שונה לחלוטין.",
+        "date": "אפריל 2025",
+        "content": "<p>כאב כרוני הוא אחד הנושאים הפחות מובנים ברפואה הקונבנציונלית. רבים מאיתנו גדלנו עם התפיסה שכאב = נזק. שאם כואב — משהו שבור. אבל המדע של שני העשורים האחרונים מראה תמונה שונה לחלוטין.</p><h3>מה באמת קורה במוח?</h3><p>הכאב הכרוני נוצר בעיקר במערכת העצבים, לא בגוף עצמו. המוח, כמו מערכת אזעקה שהפכה רגישה מדי, ממשיך לשלוח אותות כאב גם כשאין נזק ממשי. מדענים מכנים זאת <strong>רגישות מרכזית</strong>.</p><p>תחשבו על זה כך: יש לכם אזעקה בבית שמתחילה להשתגע. היא מצלצלת בכל פעם שעובר אוטו, בכל פעם שמישהו מנגן מוזיקה, בכל פעם שיורד גשם. האזעקה עצמה תקינה — אבל הרגישות שלה כוונה מחדש בצורה לא נכונה. כך בדיוק פועלת רגישות מרכזית.</p><h3>למה זה קורה?</h3><p>ישנן מספר סיבות שמובילות לכאב כרוני:</p><ul><li><strong>עומס מצטבר:</strong> הגוף שמר דפוסי מתח שנים ארוכות. כל שנה מוסיפה שכבה. יום אחד, הכוס עולה על גדותיה.</li><li><strong>פציעות שלא הסתיימו:</strong> לגוף יש מנגנון הגנה שנועד לשמור עליו בזמן פציעה. לפעמים המנגנון הזה לא מקבל את האות שהפציעה הסתיימה — ונשאר פעיל.</li><li><strong>הקשר הרגשי:</strong> חרדה, טראומה ואפילו מחשבות חוזרות על כאב — כולם מגבירים את הרגישות של מערכת העצבים ומחזקים את אות הכאב.</li><li><strong>דפוסי תנועה:</strong> כשכואב לנו, אנחנו מתחילים להגן על האזור — זזים אחרת, מגבילים תנועות. עם הזמן הגוף שוכח איך לזוז נכון.</li></ul><h3>אז מה עושים?</h3><p>השינוי מתחיל בהבנה שהגוף אינו שבור — הוא פשוט למד דפוס שכבר לא משרת אותנו. זו בשורה טובה. כי דפוסים שנלמדו — ניתן ללמד מחדש.</p><p>שיטת פשיקום® עובדת בדיוק על זה: לגשת למערכת העצבים, להשיב לה ביטחון, ולאפשר לגוף לחזור לתנועה חופשית — ללא כאב.</p><p>בטיפולים שאני מעבירה, אני רואה שוב ושוב את הרגע שבו הגוף &ldquo;מבין&rdquo; שמותר לו לשחרר. זה לא נס — זה הגוף שעושה בדיוק את מה שהוא תמיד ידע לעשות.</p>"
+      },
+      "en": {
+        "title": "What Causes Chronic Pain? What Nobody Taught Us",
+        "summary": "Many of us grew up believing pain equals damage. The science of the last two decades tells a very different story.",
+        "date": "April 2025",
+        "content": "<p>Chronic pain is one of the least understood topics in conventional medicine. Many of us grew up with the belief that pain = damage. If it hurts, something must be broken. But the science of the last two decades tells a completely different story.</p><h3>What's Really Happening in the Brain?</h3><p>Chronic pain is primarily created in the nervous system, not in the body itself. The brain, like an alarm system that has become oversensitized, continues sending pain signals even when there is no actual damage. Scientists call this phenomenon <strong>central sensitization</strong>.</p><p>Think of it this way: you have an alarm in your house that starts going haywire. It rings every time a car passes, every time someone plays music, every time it rains. The alarm itself is functioning — but its sensitivity has been recalibrated incorrectly. This is exactly how central sensitization works.</p><h3>Why Does This Happen?</h3><p>Several causes lead to chronic pain:</p><ul><li><strong>Accumulated load:</strong> The body has stored tension patterns for years. Each year adds another layer. One day, the cup overflows.</li><li><strong>Incomplete injuries:</strong> The body has a protection mechanism designed to protect it during injury. Sometimes this mechanism never receives the signal that the injury is over — and remains active.</li><li><strong>Emotional connection:</strong> Anxiety, trauma, and even repetitive thoughts about pain all increase nervous system sensitivity and amplify the pain signal.</li><li><strong>Movement patterns:</strong> When something hurts, we begin to protect the area — moving differently, restricting movements. Over time, the body forgets how to move correctly.</li></ul><h3>So What Do We Do?</h3><p>Change begins with understanding that the body isn't broken — it simply learned a pattern that no longer serves us. This is good news, because patterns that were learned can be re-learned.</p><p>The Fashicom® method works on exactly this: approaching the nervous system, restoring its sense of safety, and allowing the body to return to free movement — without pain.</p><p>In the treatments I give, I see again and again the moment when the body &ldquo;understands&rdquo; that it's allowed to release. It's not magic — it's the body doing exactly what it always knew how to do.</p>"
+      }
+    },
+    {
+      "id": "body-signals",
+      "icon": "👂",
+      "color": "mint",
+      "he": {
+        "title": "כשהגוף שולח סימנים — איך להקשיב נכון",
+        "summary": "הגוף שלנו מדבר אלינו כל הזמן. הבעיה היא שרובנו לא למדנו את השפה הזו.",
+        "date": "מרץ 2025",
+        "content": "<p>הגוף שלנו מדבר אלינו כל הזמן. כאב, מתח, עייפות, נוקשות — אלו לא רק תסמינים שיש להשתיק. הם שפה. הם הודעות. הבעיה היא שרובנו לא למדנו את השפה הזו.</p><h3>ארבעת הערוצים של הגוף</h3><p>לאחר שנים של עבודה טיפולית, זיהיתי ארבעה ערוצים עיקריים שדרכם הגוף מנסה לתקשר:</p><ul><li><strong>כאב ממוקד:</strong> כאב חד, במקום מסוים — לרוב אזהרה שמשהו דורש תשומת לב. לא תמיד אסון, אבל בהחלט שווה לשים לב.</li><li><strong>מתח שרירי:</strong> כתף מורמת, לסת מהודקת, כפות ידיים קפוצות. אלו סימנים של עומס מצטבר שהגוף מחזיק.</li><li><strong>דפוסי עייפות:</strong> עייפות שמגיעה בזמנים ספציפיים — אחרי פגישות מסוימות, בסיטואציות מסוימות — היא לרוב רגשית ולא רק פיזית.</li><li><strong>הגבלת תנועה:</strong> כשהגוף מתחיל לצמצם טווח תנועה, הוא לרוב מגן על משהו עמוק יותר.</li></ul><h3>שלושה כלים ללמוד את השפה</h3><p>הקשבה לגוף היא מיומנות — ואפשר ללמד אותה. הנה שלושה כלים פשוטים להתחיל:</p><p><strong>1. הצ׳ק-אין הגופני:</strong> פעמיים ביום, עצרו לשלושים שניות ושאלו: <em>איפה בגוף שלי יש עכשיו עומס?</em> לא לנתח, לא לתקן — רק לשים לב. הידיעה בלבד כבר מתחילה לשחרר.</p><p><strong>2. אל תילחמו בסימפטום:</strong> הכאב הוא שליח, לא אויב. כשאנחנו לוחמים בו — דוחפים דרכו, משתיקים אותו בתרופות ושוכחים ממנו — אנחנו מפספסים את ההודעה. לפעמים כדאי לשבת עם הכאב ולשאול: <em>מה אתה רוצה שאדע?</em></p><p><strong>3. תנועה סקרנית:</strong> לא אימון, לא שיפור — פשוט תנועה עם סקרנות. אחרי יום ארוך, הניחו יד על חלק גופכם שמרגיש נוקשה ועשו תנועה קטנה, עדינה. שאלו: <em>מה מרגיש טוב?</em></p><h3>מה קורה כשמתחילים להקשיב</h3><p>מה שמדהים אותי כל פעם מחדש הוא שברגע שאנשים מתחילים ממש להקשיב לגוף שלהם — לא רק לציית לו, אלא להקשיב — משהו בגוף נרגע. הכאב לא נעלם מיד, אבל האינטנסיביות שלו יורדת. הגוף מרגיש שמישהו שומע אותו.</p><p>זה הבסיס של הגישה הטיפולית שלי: לפני שאנחנו משנים משהו — קודם כל מקשיבים.</p>"
+      },
+      "en": {
+        "title": "When Your Body Sends Signals — How to Listen",
+        "summary": "Our bodies speak to us constantly. The problem is that most of us never learn this language.",
+        "date": "March 2025",
+        "content": "<p>Our bodies speak to us constantly. Pain, tension, fatigue, stiffness — these aren't just symptoms to be silenced. They are a language. They are messages. The problem is that most of us never learn this language.</p><h3>The Four Body Channels</h3><p>After years of therapeutic work, I've identified four main channels through which the body tries to communicate:</p><ul><li><strong>Localized pain:</strong> Sharp pain in a specific place — usually a warning that something needs attention. Not always catastrophic, but definitely worth noticing.</li><li><strong>Muscle tension:</strong> A raised shoulder, a clenched jaw, tightened hands. These are signs of accumulated load the body is holding.</li><li><strong>Fatigue patterns:</strong> Fatigue that arrives at specific times — after certain meetings, in certain situations — is usually emotional, not just physical.</li><li><strong>Restricted movement:</strong> When the body begins limiting its range of motion, it's usually protecting something deeper.</li></ul><h3>Three Tools for Learning the Language</h3><p>Listening to your body is a skill — and it can be taught. Here are three simple tools to begin:</p><p><strong>1. The Body Check-In:</strong> Twice a day, stop for thirty seconds and ask: <em>Where in my body is there load right now?</em> Don't analyze, don't fix — just notice. Awareness alone already begins to release.</p><p><strong>2. Don't Fight the Symptom:</strong> Pain is a messenger, not an enemy. When we fight it — pushing through it, silencing it with medication and forgetting about it — we miss the message. Sometimes it's worth sitting with the pain and asking: <em>What do you want me to know?</em></p><p><strong>3. Curious Movement:</strong> Not exercise, not improvement — just movement with curiosity. After a long day, place your hand on a part of your body that feels stiff and make a small, gentle movement. Ask: <em>What feels good?</em></p><h3>What Happens When You Start Listening</h3><p>What amazes me every single time is that the moment people truly begin listening to their bodies — not just obeying them, but listening — something in the body quiets down. The pain doesn't disappear immediately, but its intensity decreases. The body feels that someone is hearing it.</p><p>This is the foundation of my therapeutic approach: before we change anything — first we listen.</p>"
+      }
+    },
+    {
+      "id": "fashicom-science",
+      "icon": "✨",
+      "color": "peach",
+      "he": {
+        "title": "שיטת פשיקום: המדע שמאחורי הנס",
+        "summary": "כשאנשים יוצאים מטיפול ראשון עם שיפור ניכר, הם אומרים שזה נס. אבל יש כאן מדע — בואו נבין אותו.",
+        "date": "פברואר 2025",
+        "content": "<p>כשאנשים מגיעים לטיפול ראשון בפשיקום® ויוצאים ממנו עם שיפור ניכר — הם לרוב אומרים שזה נס. אני מבינה למה. כי מה שקורה בטיפול הזה מרגיש כמו קסם — הגוף, שסבל שנים, פתאום זוכר איך לנוע. אבל זה לא קסם. יש כאן מדע. בואו נבין אותו.</p><h3>מה זו תקשורת בין-שרירית?</h3><p>השרירים שלנו לא עובדים כישויות בודדות ומנותקות. הם עובדים ברשתות. כשאתם מרימים יד, מעורבות עשרות שרירים — חלקם ביד, חלקם בכתף, חלקם בגב, חלקם בצוואר. כולם צריכים לתאם ביניהם בזמן אמת.</p><p>כשקבוצת שרירים אחת נמצאת בעומס יתר — בגלל פציעה, תנוחה רעה, או מתח כרוני — היא מתחילה לשלוח אותות שגויים לשכניה. השכנות עונות, ומתחילות הן עצמן לפעול בצורה לא נכונה. לאורך זמן, כל הרשת &ldquo;לומדת&rdquo; דפוס לקוי.</p><p>שיטת פשיקום® מאתרת את המקום בו התחיל חוסר התיאום, ומטפלת שם — לא במקום שבו מורגש הכאב, אלא בשורשו.</p><h3>הפרדת תנועה מכאב</h3><p>אחד העקרונות המרתקים ביותר בשיטה הוא מה שאני מכנה <strong>ניתוק הקישור</strong>. הגוף, שלמד לאורך זמן שתנועה מסוימת = כאב, בנה קישור עצבי ישיר בין הפעולה לתגובה. זה קישור לומד — ולכן ניתן ללמד אותו מחדש.</p><p>בטיפול, אנחנו לוקחים את אותה תנועה שגרמה לכאב ומבצעים אותה בדרך שונה: קצב שונה, זווית שונה, מודעות שונה. שוב ושוב, בעדינות. המוח מתחיל לקלוט: <em>אהה, תנועה זו לא מסוכנת.</em> הכאב פוחת.</p><h3>הממד הרגשי — לא &ldquo;בראש&rdquo; אלא בגוף</h3><p>אחד הדברים הכי חשובים שלמדתי בשנות העבודה שלי: רגשות לא &ldquo;בראש&rdquo; — הם בגוף. כעס מאוחסן בלסת ובכתפיים. עצב בחזה ובגרון. חרדה בבטן ובגב התחתון.</p><p>כשאנחנו לא מעבדים רגשות — הגוף עושה את זה בשבילנו, דרך מתח שרירי. לאורך זמן, המתח הזה נהיה כרוני. הכאב הפיזי הוא לרוב הסיפור הרגשי שלא סופר.</p><p>שיטת פשיקום® עובדת עם שניהם — הפיזי והרגשי — לא בנפרד, אלא כיחידה אחת. זו הסיבה שהשינויים שאנשים חווים בטיפול הם לרוב עמוקים ומתמשכים: הם לא רק שחרור שרירי — הם שחרור של סיפור שלם.</p><p>בפעם הבאה שמישהו יאמר לכם שזה נס — אתם יכולים לחייך ולומר: לא, זה פשוט פשיקום®.</p>"
+      },
+      "en": {
+        "title": "The Fashicom Method: The Science Behind the Change",
+        "summary": "When people leave their first treatment with noticeable improvement, they call it magic. But there's science here — let's understand it.",
+        "date": "February 2025",
+        "content": "<p>When people come for their first Fashicom® treatment and leave with noticeable improvement — they often call it magic. I understand why. Because what happens in this treatment feels like magic — the body, which has suffered for years, suddenly remembers how to move. But it isn't magic. There's science here. Let's understand it.</p><h3>What Is Inter-Muscular Communication?</h3><p>Our muscles don't work as isolated, disconnected entities. They work in networks. When you lift your arm, dozens of muscles are involved — some in the arm, some in the shoulder, some in the back, some in the neck. They all need to coordinate with each other in real time.</p><p>When one muscle group is overloaded — due to injury, poor posture, or chronic stress — it begins sending incorrect signals to its neighbors. The neighbors respond, and they themselves begin functioning incorrectly. Over time, the entire network &ldquo;learns&rdquo; a faulty pattern.</p><p>The Fashicom® method locates where the lack of coordination began, and treats there — not where the pain is felt, but at its root.</p><h3>Separating Movement from Pain</h3><p>One of the most fascinating principles in the method is what I call <strong>pattern disconnection</strong>. The body, which learned over time that a certain movement = pain, built a direct neural connection between the action and the response. This is a learned connection — and therefore it can be re-learned.</p><p>In treatment, we take the same movement that caused pain and perform it in a different way: different pace, different angle, different awareness. Again and again, gently. The brain begins to register: <em>Ah, this movement isn't dangerous.</em> The pain diminishes.</p><h3>The Emotional Dimension — Not &ldquo;In Your Head&rdquo; but In Your Body</h3><p>One of the most important things I've learned in my years of work: emotions aren't &ldquo;in your head&rdquo; — they're in the body. Anger is stored in the jaw and shoulders. Sadness in the chest and throat. Anxiety in the belly and lower back.</p><p>When we don't process emotions — the body does it for us, through muscular tension. Over time, this tension becomes chronic. Physical pain is often an emotional story that was never told.</p><p>The Fashicom® method works with both — the physical and the emotional — not separately, but as one unit. This is why the changes people experience in treatment are usually deep and lasting: they aren't just muscular releases — they are the release of a whole story.</p><p>Next time someone tells you it's magic — you can smile and say: no, it's simply Fashicom®.</p>"
+      }
+    }
+  ]
+}
