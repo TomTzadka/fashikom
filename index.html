@@ -188,13 +188,12 @@
       .about-photo { flex-shrink:0; }
       .about-text  { flex:1; }
     }
-    .avatar-ring {
-      width:200px; height:200px; border-radius:50%;
-      background: rgba(255,255,255,.6); border: 4px solid rgba(255,255,255,.9);
+    .avatar-img {
+      width:220px; height:220px; border-radius:50%;
+      object-fit:cover; object-position:center top;
+      border: 4px solid rgba(255,255,255,.9);
       box-shadow: var(--shadow-lg);
-      display:flex; flex-direction:column; align-items:center; justify-content:center;
-      gap:8px; color:var(--lavender-text); font-size:.8rem; font-weight:600; text-align:center;
-      overflow:hidden;
+      display:block;
     }
     .about-text h2 { color:var(--lavender-text); margin-bottom:4px; }
     #about-tagline { font-size:1rem; font-weight:600; color:var(--peach-text); margin-bottom:14px; }
@@ -402,13 +401,7 @@
     <div class="container">
       <div class="about-inner">
         <div class="about-photo reveal">
-          <div class="avatar-ring">
-            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" aria-hidden="true">
-              <circle cx="32" cy="22" r="14" fill="#C9A7E6" opacity=".7"/>
-              <ellipse cx="32" cy="52" rx="22" ry="14" fill="#C9A7E6" opacity=".5"/>
-            </svg>
-            <span id="about-photo-label"></span>
-          </div>
+          <img id="about-photo" src="./src/shirili_main_photo.png" alt="" class="avatar-img" />
         </div>
         <div class="about-text reveal">
           <span id="about-label" class="label label-peach"></span>
@@ -520,7 +513,7 @@
       set('about-label',       L.about.label);
       set('about-heading',     L.about.heading);
       set('about-tagline',     L.about.tagline);
-      set('about-photo-label', L.about.photo_placeholder);
+      attr('about-photo', 'alt', L.about.photo_alt);
       renderBio(L.about.bio);
       renderCredentials(L.about.credentials);
 
