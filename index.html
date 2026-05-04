@@ -96,6 +96,12 @@
     }
     .btn-email:hover { background: rgba(255,255,255,.25); }
 
+    .btn-form {
+      background: rgba(255,255,255,.1); color: var(--white);
+      border: 1.5px solid rgba(255,255,255,.35);
+    }
+    .btn-form:hover { background: rgba(255,255,255,.2); }
+
     /* ── Labels ── */
     .label {
       display: inline-block; font-size: .75rem; font-weight: 700;
@@ -676,6 +682,7 @@
         <div class="contact-btns">
           <a id="wa-btn"    class="btn btn-wa"    target="_blank" rel="noopener"></a>
           <a id="email-btn" class="btn btn-email" href="mailto:SHIRLY_EMAIL_PLACEHOLDER"></a>
+          <a id="form-btn"  class="btn btn-form"  href="./form.html" target="_blank" rel="noopener"></a>
         </div>
       </div>
     </div>
@@ -793,6 +800,7 @@
       html('wa-btn',         waIcon() + L.contact.wa_text);
       attr('wa-btn',         'href', waLink(L.contact.wa_message));
       html('email-btn',      emailIcon() + L.contact.email_text);
+      html('form-btn',       formIcon()  + L.contact.form_text);
 
       /* footer */
       set('footer-name', L.footer.name);
@@ -945,6 +953,9 @@
     }
     function emailIcon() {
       return `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>`;
+    }
+    function formIcon() {
+      return `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>`;
     }
     function waLink(msg) { return 'https://wa.me/' + WA + '?text=' + encodeURIComponent(msg); }
 

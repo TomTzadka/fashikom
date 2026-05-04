@@ -1,4 +1,5 @@
 {
+  "therapist_email": "tomtzadka@gmail.com",
   "he": {
     "meta": {
       "title": "שירילי | מטפלת מוסמכת בשיטת פשיקום®",
@@ -79,6 +80,7 @@
       "intro": "שאלות? רוצים לשמוע עוד? כתבו לי — אשמח לענות ולסייע.",
       "wa_text": "וואטסאפ",
       "email_text": "שלחי מייל",
+      "form_text": "שאלון רפואי",
       "wa_message": "שלום שירילי, ראיתי את הדף שלך ואני מעוניין/ת לשמוע עוד על טיפול בשיטת פשיקום® 🌿"
     },
     "footer": {
@@ -167,6 +169,7 @@
       "intro": "Questions? Want to hear more? Write to me — I'd love to answer and help.",
       "wa_text": "WhatsApp",
       "email_text": "Send Email",
+      "form_text": "Medical Questionnaire",
       "wa_message": "Hello Shirily, I saw your page and I'm interested in hearing more about Fashicom® therapy 🌿"
     },
     "footer": {

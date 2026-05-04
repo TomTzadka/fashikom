@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>שאלון רפואי לפני טיפול — שירילי</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --p900: #1A0836; --p800: #2D1654; --p700: #3D2070;
+      --p600: #5B30A6; --p500: #7B5EA7; --p400: #9D7EC8;
+      --p300: #BBA2DF; --p200: #D4B8EE; --p150: #E2CBF5;
+      --p100: #EDD9F9; --p50: #F7F0FE; --bg: #FEFEFE;
+      --text: #1E1035; --text-muted: #5D4E75; --white: #FFFFFF;
+      --radius: 14px; --shadow: 0 4px 24px rgba(91,48,166,.09);
+      --t: 0.22s ease;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Assistant', sans-serif;
+      font-size: 16px; line-height: 1.7;
+      color: var(--text); background: var(--p50);
+      padding-bottom: 60px;
+    }
+
+    /* ── Header ── */
+    .form-header {
+      background: linear-gradient(135deg, var(--p900) 0%, var(--p700) 100%);
+      padding: 32px 24px 28px;
+      text-align: center;
+    }
+    .form-header a {
+      display: inline-block; margin-bottom: 16px;
+      font-size: .85rem; color: rgba(255,255,255,.65);
+      text-decoration: none; letter-spacing: .04em;
+    }
+    .form-header a:hover { color: rgba(255,255,255,.9); }
+    .form-header h1 {
+      font-size: clamp(1.4rem, 4vw, 2rem);
+      color: var(--white); font-weight: 700;
+    }
+
+    /* ── Container ── */
+    .form-wrap {
+      max-width: 760px; margin: 32px auto 0;
+      padding: 0 20px;
+    }
+
+    /* ── Privacy notice ── */
+    .privacy-box {
+      background: var(--white); border-radius: var(--radius);
+      border-inline-start: 4px solid var(--p300);
+      padding: 20px 22px; margin-bottom: 28px;
+      box-shadow: var(--shadow);
+      font-size: .92rem; color: var(--text-muted); line-height: 1.6;
+    }
+
+    /* ── Section ── */
+    .form-section {
+      background: var(--white); border-radius: var(--radius);
+      box-shadow: var(--shadow); padding: 28px 28px 24px;
+      margin-bottom: 24px;
+    }
+    .form-section h2 {
+      font-size: 1.1rem; font-weight: 700; color: var(--p700);
+      margin-bottom: 22px; padding-bottom: 12px;
+      border-bottom: 2px solid var(--p100);
+    }
+
+    /* ── Fields ── */
+    .field-row {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+      margin-bottom: 16px;
+    }
+    .field-row.full { grid-template-columns: 1fr; }
+    @media (max-width: 560px) { .field-row { grid-template-columns: 1fr; } }
+
+    .field { display: flex; flex-direction: column; gap: 5px; }
+    .field label {
+      font-size: .88rem; font-weight: 700; color: var(--p700);
+    }
+    .field label .req { color: var(--p500); margin-inline-start: 2px; }
+
+    .field input, .field select, .field textarea {
+      border: 1.5px solid var(--p200); border-radius: 10px;
+      padding: 10px 14px; font-family: 'Assistant', sans-serif;
+      font-size: .95rem; color: var(--text); background: var(--bg);
+      transition: border-color var(--t), box-shadow var(--t);
+      outline: none;
+    }
+    .field input:focus, .field select:focus, .field textarea:focus {
+      border-color: var(--p500);
+      box-shadow: 0 0 0 3px rgba(91,48,166,.1);
+    }
+    .field textarea { resize: vertical; min-height: 88px; }
+    .field input[type="range"] { padding: 0; border: none; background: none; accent-color: var(--p600); }
+
+    .pain-scale {
+      display: flex; flex-direction: column; gap: 6px;
+    }
+    .pain-scale-labels {
+      display: flex; justify-content: space-between;
+      font-size: .78rem; color: var(--p400); font-weight: 600;
+    }
+    #pain-val {
+      text-align: center; font-size: 1.3rem; font-weight: 700;
+      color: var(--p600); margin-top: 2px;
+    }
+
+    /* Radio group */
+    .radio-group { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 4px; }
+    .radio-group label {
+      display: flex; align-items: center; gap: 6px;
+      background: var(--p50); border: 1.5px solid var(--p200);
+      border-radius: 50px; padding: 6px 16px;
+      cursor: pointer; font-size: .88rem; font-weight: 600;
+      color: var(--p700); transition: all var(--t);
+    }
+    .radio-group input[type="radio"] { display: none; }
+    .radio-group input[type="radio"]:checked + span {
+      /* handled via JS / label styling */
+    }
+    .radio-group label:has(input:checked) {
+      background: var(--p600); color: var(--white); border-color: var(--p600);
+    }
+    .radio-group label input { display: none; }
+
+    /* Conditional field */
+    .conditional { display: none; }
+    .conditional.visible { display: flex; flex-direction: column; gap: 5px; }
+
+    /* ── Declaration ── */
+    .declaration-box {
+      background: var(--p50); border-radius: var(--radius);
+      border: 1.5px solid var(--p200); padding: 20px 22px;
+      margin-bottom: 24px; font-size: .9rem; color: var(--text-muted);
+      line-height: 1.75;
+    }
+
+    /* ── Signature ── */
+    .sig-section {
+      background: var(--white); border-radius: var(--radius);
+      box-shadow: var(--shadow); padding: 28px 28px 24px;
+      margin-bottom: 24px;
+    }
+    .sig-section h2 {
+      font-size: 1.1rem; font-weight: 700; color: var(--p700);
+      margin-bottom: 8px;
+    }
+    .sig-hint {
+      font-size: .85rem; color: var(--p400); margin-bottom: 14px;
+    }
+    #sig-canvas {
+      width: 100%; height: 180px;
+      border: 2px solid var(--p200); border-radius: 10px;
+      background: #fff; cursor: crosshair; display: block;
+      touch-action: none;
+    }
+    #sig-canvas.signed { border-color: var(--p500); }
+    .sig-actions {
+      display: flex; justify-content: flex-end; margin-top: 10px;
+    }
+    #clear-sig {
+      background: none; border: 1.5px solid var(--p200);
+      border-radius: 50px; padding: 6px 18px;
+      font-family: 'Assistant', sans-serif; font-size: .85rem;
+      color: var(--p500); cursor: pointer;
+      transition: all var(--t);
+    }
+    #clear-sig:hover { background: var(--p50); border-color: var(--p400); }
+    .sig-error { color: #c0392b; font-size: .85rem; margin-top: 6px; display: none; }
+
+    /* ── Submit ── */
+    .submit-row { display: flex; justify-content: center; }
+    #submit-btn {
+      background: var(--p600); color: var(--white);
+      border: none; border-radius: 50px;
+      padding: 15px 52px; font-family: 'Assistant', sans-serif;
+      font-size: 1.05rem; font-weight: 700; cursor: pointer;
+      box-shadow: 0 8px 28px rgba(91,48,166,.3);
+      transition: background var(--t), transform var(--t), box-shadow var(--t);
+    }
+    #submit-btn:hover { background: var(--p700); transform: translateY(-2px); box-shadow: 0 12px 36px rgba(91,48,166,.4); }
+    #submit-btn:active { transform: translateY(0); }
+    #submit-btn:disabled { background: var(--p300); cursor: not-allowed; transform: none; box-shadow: none; }
+
+    /* ── Dev preview modal ── */
+    #dev-modal {
+      display: none; position: fixed; inset: 0; z-index: 9999;
+      background: rgba(26,8,54,.6); backdrop-filter: blur(4px);
+      overflow-y: auto; padding: 24px 16px;
+    }
+    #dev-modal.open { display: flex; align-items: flex-start; justify-content: center; }
+    .dev-box {
+      background: var(--white); border-radius: var(--radius);
+      max-width: 680px; width: 100%;
+      box-shadow: 0 24px 72px rgba(29,8,54,.3);
+      overflow: hidden;
+    }
+    .dev-box-header {
+      background: var(--p700); color: var(--white);
+      padding: 18px 24px; display: flex; justify-content: space-between; align-items: center;
+    }
+    .dev-box-header h3 { font-size: 1rem; font-weight: 700; }
+    .dev-box-header span { font-size: .82rem; opacity: .75; }
+    .dev-box-body { padding: 24px; }
+    .dev-row {
+      display: flex; gap: 12px; padding: 9px 0;
+      border-bottom: 1px solid var(--p100); font-size: .9rem;
+    }
+    .dev-row:last-of-type { border-bottom: none; }
+    .dev-key { min-width: 160px; font-weight: 700; color: var(--p600); flex-shrink: 0; }
+    .dev-val { color: var(--text-muted); word-break: break-word; }
+    .dev-sig-img { max-width: 100%; border: 1px solid var(--p200); border-radius: 8px; margin-top: 8px; }
+    .dev-box-footer {
+      padding: 16px 24px; border-top: 1px solid var(--p100);
+      display: flex; gap: 12px; justify-content: flex-end;
+    }
+    .dev-close-btn {
+      background: var(--p600); color: var(--white); border: none;
+      border-radius: 50px; padding: 9px 24px;
+      font-family: 'Assistant', sans-serif; font-size: .9rem; font-weight: 700; cursor: pointer;
+    }
+
+    /* ── Success ── */
+    #success-screen {
+      display: none; text-align: center;
+      background: var(--white); border-radius: var(--radius);
+      box-shadow: var(--shadow); padding: 48px 32px;
+      margin-top: 32px;
+    }
+    .success-icon { font-size: 3rem; margin-bottom: 16px; }
+    #success-screen h2 { color: var(--p700); margin-bottom: 12px; }
+    #success-screen p { color: var(--text-muted); margin-bottom: 24px; }
+    #success-screen a {
+      display: inline-block; background: var(--p600); color: var(--white);
+      border-radius: 50px; padding: 11px 28px;
+      font-weight: 700; font-size: .95rem; text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-header">
+    <a href="./">← חזרה לאתר</a>
+    <h1>שאלון רפואי לפני טיפול</h1>
+  </div>
+
+  <div class="form-wrap">
+
+    <div class="privacy-box">
+      פרטי המטופל/ת המופיעים בשאלון זה חסויים. המידע בשאלון זה ישמש אך ורק על מנת לטפל באופן הטוב ביותר במטופל/ת. מטרת השאלון, בראש ובראשונה, היא שמירה על המטופל/ת.
+    </div>
+
+    <form id="medical-form" method="POST" novalidate>
+      <input type="hidden" name="_subject"  id="f-subject" value="שאלון רפואי חדש" />
+      <input type="hidden" name="_template" value="table" />
+      <input type="hidden" name="_captcha"  value="false" />
+      <input type="hidden" name="_next"     id="f-next" />
+
+      <!-- ── Part A ── -->
+      <div class="form-section">
+        <h2>חלק א׳ — פרטים אישיים</h2>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="f-name">שם מלא <span class="req">*</span></label>
+            <input type="text" id="f-name" name="שם מלא" required autocomplete="name" />
+          </div>
+          <div class="field">
+            <label for="f-id">מספר תעודת זהות</label>
+            <input type="text" id="f-id" name="תעודת זהות" inputmode="numeric" />
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="f-dob">תאריך לידה</label>
+            <input type="date" id="f-dob" name="תאריך לידה" />
+          </div>
+          <div class="field">
+            <label>מין</label>
+            <div class="radio-group">
+              <label><input type="radio" name="מין" value="זכר" /><span>זכר</span></label>
+              <label><input type="radio" name="מין" value="נקבה" /><span>נקבה</span></label>
+              <label><input type="radio" name="מין" value="אחר" /><span>אחר</span></label>
+            </div>
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="f-phone">טלפון <span class="req">*</span></label>
+            <input type="tel" id="f-phone" name="טלפון" required autocomplete="tel" />
+          </div>
+          <div class="field">
+            <label for="f-email">דוא״ל</label>
+            <input type="email" id="f-email" name="דוא״ל המטופל" autocomplete="email" />
+          </div>
+        </div>
+
+        <div class="field-row full">
+          <div class="field">
+            <label for="f-address">כתובת מגורים</label>
+            <input type="text" id="f-address" name="כתובת" autocomplete="street-address" />
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Part B ── -->
+      <div class="form-section">
+        <h2>חלק ב׳ — מצב בריאותי</h2>
+
+        <div class="field-row full" style="margin-bottom:16px">
+          <div class="field">
+            <label for="f-reason">סיבת הפנייה לטיפול — תלונה עיקרית <span class="req">*</span></label>
+            <textarea id="f-reason" name="סיבת הפנייה" required rows="3"></textarea>
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="f-location">מיקום הכאב / אי הנוחות</label>
+            <input type="text" id="f-location" name="מיקום הכאב" />
+          </div>
+          <div class="field">
+            <label for="f-duration">משך הזמן</label>
+            <select id="f-duration" name="משך הכאב">
+              <option value="">— בחר/י —</option>
+              <option>פחות מחודש</option>
+              <option>1–6 חודשים</option>
+              <option>6–12 חודשים</option>
+              <option>1–3 שנים</option>
+              <option>יותר מ-3 שנים</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field-row full" style="margin-bottom:16px">
+          <div class="field">
+            <label for="f-pain-range">עצמת הכאב <span style="font-weight:400;color:var(--p400)">(1 = קל, 10 = בלתי נסבל)</span></label>
+            <div class="pain-scale">
+              <input type="range" id="f-pain-range" name="עצמת כאב (1-10)" min="1" max="10" value="5"
+                oninput="document.getElementById('pain-val').textContent = this.value" />
+              <div class="pain-scale-labels"><span>1</span><span>10</span></div>
+              <div id="pain-val">5</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="field-row full" style="margin-bottom:16px">
+          <div class="field">
+            <label>האם הכאב מקרין לאזורים נוספים?</label>
+            <div class="radio-group" id="radiates-group">
+              <label><input type="radio" name="הקרנת כאב" value="לא" checked /><span>לא</span></label>
+              <label><input type="radio" name="הקרנת כאב" value="כן" /><span>כן</span></label>
+            </div>
+          </div>
+        </div>
+        <div class="field-row full conditional" id="radiates-detail" style="margin-bottom:16px">
+          <div class="field">
+            <label for="f-radiates">לאן מקרין הכאב?</label>
+            <input type="text" id="f-radiates" name="אזורי הקרנה" />
+          </div>
+        </div>
+
+        <div class="field-row full" style="margin-bottom:16px">
+          <div class="field">
+            <label for="f-prev">טיפולים שניסית בעבר לבעיה זו</label>
+            <textarea id="f-prev" name="טיפולים קודמים" rows="2" placeholder="פיזיותרפיה, כירופרקטיקה, דיקור, וכד׳"></textarea>
+          </div>
+        </div>
+
+        <div class="field-row full" style="margin-bottom:16px">
+          <div class="field">
+            <label for="f-meds">תרופות שאת/ה נוטל/ת כיום</label>
+            <textarea id="f-meds" name="תרופות" rows="2" placeholder="שם התרופה ומינון"></textarea>
+          </div>
+        </div>
+
+        <div class="field-row full" style="margin-bottom:16px">
+          <div class="field">
+            <label for="f-surgery">ניתוחים בעבר</label>
+            <textarea id="f-surgery" name="ניתוחים" rows="2" placeholder="סוג הניתוח ושנה משוערת"></textarea>
+          </div>
+        </div>
+
+        <div class="field-row full" style="margin-bottom:16px">
+          <div class="field">
+            <label for="f-chronic">מחלות כרוניות / אבחנות רפואיות</label>
+            <textarea id="f-chronic" name="מחלות כרוניות" rows="2" placeholder="סוכרת, יתר לחץ דם, אוסטאופורוזיס, וכד׳"></textarea>
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="f-allergy">אלרגיות ידועות</label>
+            <input type="text" id="f-allergy" name="אלרגיות" />
+          </div>
+          <div class="field">
+            <label>הריון (אם רלוונטי)</label>
+            <div class="radio-group">
+              <label><input type="radio" name="הריון" value="לא" checked /><span>לא</span></label>
+              <label><input type="radio" name="הריון" value="כן" /><span>כן</span></label>
+              <label><input type="radio" name="הריון" value="לא רלוונטי" /><span>לא רלוונטי</span></label>
+            </div>
+          </div>
+        </div>
+
+        <div class="field-row full" style="margin-top:16px">
+          <div class="field">
+            <label for="f-extra">מידע נוסף שחשוב לדעת</label>
+            <textarea id="f-extra" name="מידע נוסף" rows="3"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Declaration ── -->
+      <div class="declaration-box">
+        הנני מתחייב/ת כי הפרטים שנמסרו בטופס שאלון הערכת הבריאות מלאים ונכונים וכי לא ידוע לי על כל מגבלה בריאותית המונעת ממני לקבל טיפול זה. כמו כן, ידוע לי כי הסתרת מידע לגבי מצבי הבריאותי הינה באחריותי האישית והבלעדית ולא אוכל לבוא בכל טענה או תביעה כנגד המטפל.
+      </div>
+
+      <!-- ── Signature ── -->
+      <div class="sig-section">
+        <h2>חתימה דיגיטלית</h2>
+        <p class="sig-hint">חתמו בתוך המסגרת באמצעות האצבע (מובייל) או העכבר (מחשב)</p>
+        <canvas id="sig-canvas" width="700" height="180"></canvas>
+        <div class="sig-actions">
+          <button type="button" id="clear-sig">נקה חתימה</button>
+        </div>
+        <p class="sig-error" id="sig-error">יש לחתום לפני שליחת הטופס</p>
+        <input type="hidden" name="חתימה דיגיטלית (תאריך)" id="sig-date-field" />
+        <input type="hidden" name="חתימה (תמונה base64)" id="sig-data" />
+      </div>
+
+      <div class="submit-row">
+        <button type="submit" id="submit-btn">שלח שאלון ←</button>
+      </div>
+
+    </form>
+
+    <!-- Dev preview modal (localhost only) -->
+    <div id="dev-modal">
+      <div class="dev-box">
+        <div class="dev-box-header">
+          <h3>תצוגה מקומית — כך ייראה המייל שיישלח</h3>
+          <span>localhost בלבד · לא נשלח בפועל</span>
+        </div>
+        <div class="dev-box-body" id="dev-body"></div>
+        <div class="dev-box-footer">
+          <button class="dev-close-btn" onclick="document.getElementById('dev-modal').classList.remove('open')">סגור</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="success-screen">
+      <div class="success-icon">✅</div>
+      <h2>השאלון נשלח בהצלחה</h2>
+      <p>הטופס התקבל ושירילי תיצור קשר בהקדם.</p>
+      <a href="./">חזרה לאתר</a>
+    </div>
+
+  </div><!-- /form-wrap -->
+
+  <script>
+    /* ── Fetch therapist email from content.json ── */
+    async function init() {
+      try {
+        const res = await fetch('./content.json?v=' + Date.now());
+        const cfg = await res.json();
+        const email = cfg.therapist_email || '';
+        /* do NOT encodeURIComponent — FormSubmit expects a plain email in the path */
+        document.getElementById('medical-form').action = 'https://formsubmit.co/' + email;
+        document.getElementById('f-next').value = window.location.href.split('?')[0] + '?sent=1';
+      } catch (e) { /* fallback: action stays empty, user will see browser error */ }
+    }
+    init();
+
+    /* ── Success state on redirect ── */
+    if (new URLSearchParams(location.search).get('sent') === '1') {
+      document.getElementById('medical-form').style.display = 'none';
+      document.getElementById('success-screen').style.display = 'block';
+    }
+
+    /* ── Radiates conditional ── */
+    document.querySelectorAll('input[name="הקרנת כאב"]').forEach(r => {
+      r.addEventListener('change', () => {
+        const show = r.value === 'כן' && r.checked;
+        document.getElementById('radiates-detail').classList.toggle('visible', show);
+      });
+    });
+
+    /* ── Signature Pad ── */
+    const canvas = document.getElementById('sig-canvas');
+    const ctx    = canvas.getContext('2d');
+    let drawing  = false;
+    let hasSig   = false;
+
+    function resizeCanvas() {
+      const ratio = window.devicePixelRatio || 1;
+      const rect  = canvas.getBoundingClientRect();
+      canvas.width  = rect.width  * ratio;
+      canvas.height = rect.height * ratio;
+      ctx.scale(ratio, ratio);
+      ctx.strokeStyle = '#1E1035';
+      ctx.lineWidth   = 2.2;
+      ctx.lineCap     = 'round';
+      ctx.lineJoin    = 'round';
+    }
+    resizeCanvas();
+    window.addEventListener('resize', () => { hasSig = false; resizeCanvas(); });
+
+    function getPos(e) {
+      const r = canvas.getBoundingClientRect();
+      const src = e.touches ? e.touches[0] : e;
+      return { x: src.clientX - r.left, y: src.clientY - r.top };
+    }
+
+    canvas.addEventListener('mousedown',  e => { drawing = true; ctx.beginPath(); const p = getPos(e); ctx.moveTo(p.x, p.y); });
+    canvas.addEventListener('mousemove',  e => { if (!drawing) return; const p = getPos(e); ctx.lineTo(p.x, p.y); ctx.stroke(); hasSig = true; canvas.classList.add('signed'); });
+    canvas.addEventListener('mouseup',    () => drawing = false);
+    canvas.addEventListener('mouseleave', () => drawing = false);
+
+    canvas.addEventListener('touchstart',  e => { e.preventDefault(); drawing = true; ctx.beginPath(); const p = getPos(e); ctx.moveTo(p.x, p.y); }, { passive: false });
+    canvas.addEventListener('touchmove',   e => { e.preventDefault(); if (!drawing) return; const p = getPos(e); ctx.lineTo(p.x, p.y); ctx.stroke(); hasSig = true; canvas.classList.add('signed'); }, { passive: false });
+    canvas.addEventListener('touchend',    () => drawing = false);
+
+    document.getElementById('clear-sig').addEventListener('click', () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      hasSig = false;
+      canvas.classList.remove('signed');
+    });
+
+    /* ── Form submit ── */
+    document.getElementById('medical-form').addEventListener('submit', e => {
+      e.preventDefault();
+      const form = e.currentTarget;
+
+      /* validate required fields */
+      if (!form['שם מלא'].value.trim() || !form['טלפון'].value.trim() || !form['סיבת הפנייה'].value.trim()) {
+        alert('אנא מלא/י את כל השדות המסומנים בכוכבית (*)');
+        return;
+      }
+
+      /* validate signature */
+      if (!hasSig) {
+        const err = document.getElementById('sig-error');
+        err.style.display = 'block';
+        canvas.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        return;
+      }
+      document.getElementById('sig-error').style.display = 'none';
+
+      /* stamp signature date */
+      const now = new Date();
+      document.getElementById('sig-date-field').value =
+        `נחתם ב-${now.toLocaleDateString('he-IL')} ${now.toLocaleTimeString('he-IL')}`;
+
+      /* embed signature image */
+      document.getElementById('sig-data').value = canvas.toDataURL('image/png');
+
+      /* update subject with patient name */
+      document.getElementById('f-subject').value =
+        `שאלון רפואי — ${form['שם מלא'].value.trim()}`;
+
+      const isLocal = ['localhost', '127.0.0.1'].includes(location.hostname);
+
+      if (isLocal) {
+        /* ── Dev mode: show preview instead of submitting ── */
+        const sigImg = canvas.toDataURL('image/png');
+        const skip   = new Set(['_subject','_template','_captcha','_next','חתימה (תמונה base64)']);
+        const rows   = [];
+        new FormData(form).forEach((val, key) => {
+          if (skip.has(key) || !val) return;
+          rows.push(`<div class="dev-row"><span class="dev-key">${key}</span><span class="dev-val">${val}</span></div>`);
+        });
+        rows.push(`<div class="dev-row"><span class="dev-key">חתימה דיגיטלית</span><span class="dev-val"><img src="${sigImg}" class="dev-sig-img" /></span></div>`);
+        document.getElementById('dev-body').innerHTML = rows.join('');
+        document.getElementById('dev-modal').classList.add('open');
+      } else {
+        /* ── Production: submit to FormSubmit ── */
+        const btn = document.getElementById('submit-btn');
+        btn.disabled = true;
+        btn.textContent = 'שולח…';
+        form.submit();
+      }
+    });
+  </script>
+</body>
+</html>
