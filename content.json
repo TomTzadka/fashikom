@@ -9,6 +9,7 @@
       "brand": "שירילי",
       "methods": "השיטה",
       "about": "אודות",
+      "testimonials": "המלצות",
       "articles": "מאמרים",
       "contact": "צור קשר"
     },
@@ -55,6 +56,16 @@
       "photo_alt": "תמונה של שירילי",
       "photo_placeholder": "תמונה של שירילי"
     },
+    "testimonials_section": {
+      "label": "המלצות",
+      "heading": "מה אומרים המטופלים",
+      "intro": "חוויות אמיתיות של אנשים שעברו תהליך טיפולי עם שירילי."
+    },
+    "media_section": {
+      "label": "בתקשורת",
+      "heading": "שירילי בפודקאסט",
+      "intro": "האזינו לשיחה על המסע שלי ממהנדסת חשמל לטיפול בשיטת פשיקום, דיבור על השיטה בדקה 21"
+    },
     "articles_section": {
       "label": "מאמרים",
       "heading": "קצת לקרוא, הרבה לחשוב",
@@ -86,6 +97,7 @@
       "brand": "Shirily",
       "methods": "The Method",
       "about": "About",
+      "testimonials": "Testimonials",
       "articles": "Articles",
       "contact": "Contact"
     },
@@ -132,6 +144,16 @@
       "photo_alt": "Photo of Shirily",
       "photo_placeholder": "Photo of Shirily"
     },
+    "testimonials_section": {
+      "label": "Testimonials",
+      "heading": "What Clients Say",
+      "intro": "Real experiences from people who went through a therapeutic process with Shirily."
+    },
+    "media_section": {
+      "label": "In the Media",
+      "heading": "Shirily on a Podcast",
+      "intro": "Listen to the conversation about the journey from electrical engineer to the world of movement therapy."
+    },
     "articles_section": {
       "label": "Articles",
       "heading": "A Little to Read, A Lot to Think About",
@@ -153,6 +175,59 @@
     },
     "wa_float_aria": "Send a WhatsApp message"
   },
+  "media": [
+    {
+      "spotify_id": "32winNHPFajMEh1GtqNN54",
+      "he": {
+        "show": "מזלגות — מדברים על הצמתים בחיים",
+        "title": "פרק 14: שירילי שלף – מהנדסת חשמל שהפכה למטפלת בתנועה",
+        "duration": "53 דקות"
+      },
+      "en": {
+        "show": "Forks — Talking About Life's Intersections",
+        "title": "Episode 14: Shirily Shelef – An Electrical Engineer Who Became a Movement Therapist",
+        "duration": "53 minutes"
+      }
+    }
+  ],
+  "testimonials": [
+    {
+      "he": {
+        "quote": "סבלתי משנות של כאב גב כרוני שאף רופא לא הצליח לפתור. אחרי שלושה טיפולים עם שירילי חזרתי לזוז בחופשיות. פשוט מדהים.",
+        "name": "רחל מ.",
+        "descriptor": "כאב גב כרוני"
+      },
+      "en": {
+        "quote": "I suffered years of chronic back pain that no doctor could solve. After three sessions with Shirily I was moving freely again. Simply amazing.",
+        "name": "Rachel M.",
+        "descriptor": "Chronic back pain"
+      }
+    },
+    {
+      "he": {
+        "quote": "הגעתי עם כאבי צוואר אחרי תאונה. לא האמנתי שיש פתרון. שירילי פגשה אותי בדיוק במקום שבו הייתי צריכה — בגוף וברגש יחד.",
+        "name": "יעל ד.",
+        "descriptor": "כאב צוואר לאחר תאונה"
+      },
+      "en": {
+        "quote": "I came with neck pain after an accident. I didn't believe there was a solution. Shirily met me exactly where I needed — in body and emotion together.",
+        "name": "Yael D.",
+        "descriptor": "Neck pain after accident"
+      }
+    },
+    {
+      "he": {
+        "quote": "גישה מקצועית, חמה ואמיתית. לראשונה הרגשתי שמישהו באמת מקשיב לגוף שלי ולא רק לסימפטום. הכאב פחת משמעותית.",
+        "name": "אבי כ.",
+        "descriptor": "כאב ברך כרוני"
+      },
+      "en": {
+        "quote": "Professional, warm and genuine. For the first time I felt someone truly listening to my body and not just the symptom. The pain reduced significantly.",
+        "name": "Avi K.",
+        "descriptor": "Chronic knee pain"
+      }
+    }
+  ],
   "articles": [
     {
       "id": "chronic-pain",

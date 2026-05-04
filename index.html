@@ -458,6 +458,83 @@
     }
     .btn-modal-close:hover { background: var(--p700); transform: translateY(-1px); }
 
+    /* ══════════════════════════
+       MEDIA
+    ══════════════════════════ */
+    #media { background: var(--bg); }
+
+    .media-card {
+      max-width: 720px; margin: 0 auto;
+      background: var(--white); border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .media-card-header {
+      display: flex; align-items: center; gap: 16px;
+      padding: 22px 28px 18px;
+      border-bottom: 1px solid var(--p100);
+    }
+    .media-show-badge {
+      display: flex; align-items: center; gap: 10px;
+      background: var(--p50); border-radius: 50px;
+      padding: 6px 16px 6px 10px; flex-shrink: 0;
+    }
+    .spotify-dot {
+      width: 20px; height: 20px; border-radius: 50%;
+      background: #1DB954;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .spotify-dot svg { width: 12px; height: 12px; fill: #fff; }
+    .media-show-name { font-size: .8rem; font-weight: 700; color: var(--p600); white-space: nowrap; }
+    .media-meta { font-size: .78rem; color: var(--p400); font-weight: 600; letter-spacing: .04em; }
+    .media-title { font-size: 1rem; font-weight: 700; color: var(--p700); flex: 1; line-height: 1.4; }
+
+    .media-embed { display: block; width: 100%; border: none; }
+
+    /* ══════════════════════════
+       TESTIMONIALS
+    ══════════════════════════ */
+    #testimonials { background: var(--p50); }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .testimonial-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 32px 28px 28px;
+      box-shadow: var(--shadow);
+      border-inline-start: 4px solid var(--p400);
+      display: flex; flex-direction: column; gap: 20px;
+      transition: transform var(--t), box-shadow var(--t);
+    }
+    .testimonial-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+
+    .testimonial-quote-mark {
+      font-size: 3.4rem; line-height: 1;
+      color: var(--p300); font-family: Georgia, serif;
+      margin-bottom: -12px; display: block;
+    }
+    .testimonial-text {
+      font-size: 1rem; line-height: 1.75;
+      color: var(--text-muted); flex: 1;
+      font-style: italic;
+    }
+    .testimonial-footer {
+      display: flex; flex-direction: column; gap: 2px;
+      padding-top: 16px; border-top: 1px solid var(--p100);
+    }
+    .testimonial-name {
+      font-size: .95rem; font-weight: 700; color: var(--p700);
+    }
+    .testimonial-descriptor {
+      font-size: .8rem; color: var(--p400); font-weight: 600;
+      letter-spacing: .04em;
+    }
+
     @media (max-width: 768px) {
       section { padding: 60px 20px; }
       .modal-header, #modal-content, .modal-footer { padding-inline: 22px; }
@@ -481,10 +558,11 @@
     <div class="nav-inner container">
       <span id="nav-brand"></span>
       <div class="nav-links">
-        <a id="nav-methods"  href="#fashicom"></a>
-        <a id="nav-about"    href="#about"></a>
-        <a id="nav-articles" href="#articles"></a>
-        <a id="nav-contact"  href="#contact"></a>
+        <a id="nav-methods"       href="#fashicom"></a>
+        <a id="nav-about"         href="#about"></a>
+        <a id="nav-testimonials"  href="#testimonials"></a>
+        <a id="nav-articles"      href="#articles"></a>
+        <a id="nav-contact"       href="#contact"></a>
       </div>
       <div class="nav-actions">
         <button id="lang-toggle" onclick="toggleLang()"></button>
@@ -496,11 +574,12 @@
 
     <!-- Mobile menu -->
     <div class="mobile-menu" id="mobile-menu">
-      <a id="mob-methods"  href="#fashicom" onclick="closeMenu()"></a>
-      <a id="mob-about"    href="#about"    onclick="closeMenu()"></a>
-      <a id="mob-articles" href="#articles" onclick="closeMenu()"></a>
+      <a id="mob-methods"       href="#fashicom"     onclick="closeMenu()"></a>
+      <a id="mob-about"         href="#about"        onclick="closeMenu()"></a>
+      <a id="mob-testimonials"  href="#testimonials" onclick="closeMenu()"></a>
+      <a id="mob-articles"      href="#articles"     onclick="closeMenu()"></a>
       <div class="mob-divider"></div>
-      <a id="mob-contact"  href="#contact"  onclick="closeMenu()"></a>
+      <a id="mob-contact"       href="#contact"      onclick="closeMenu()"></a>
     </div>
   </nav>
 
@@ -546,6 +625,30 @@
           <div id="about-credentials" class="credentials"></div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Media -->
+  <section id="media">
+    <div class="container">
+      <div class="section-header reveal">
+        <span id="media-label" class="label label-lav"></span>
+        <h2 id="media-heading"></h2>
+        <p id="media-intro"></p>
+      </div>
+      <div id="media-grid" class="reveal" style="--delay:80ms"></div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials">
+    <div class="container">
+      <div class="section-header reveal">
+        <span id="testimonials-label" class="label label-mint"></span>
+        <h2 id="testimonials-heading"></h2>
+        <p id="testimonials-intro"></p>
+      </div>
+      <div id="testimonials-grid" class="testimonials-grid"></div>
     </div>
   </section>
 
@@ -609,7 +712,7 @@
 
     /* ── Bootstrap ── */
     async function init() {
-      const res = await fetch('./content.json');
+      const res = await fetch('./content.json?v=' + Date.now());
       C = await res.json();
       const saved   = localStorage.getItem('fashicom-lang');
       const browser = navigator.language?.startsWith('he') ? 'he' : 'en';
@@ -627,15 +730,17 @@
 
       /* nav — desktop */
       set('nav-brand',     L.nav.brand);
-      set('nav-methods',   L.nav.methods);
-      set('nav-about',     L.nav.about);
-      set('nav-articles',  L.nav.articles);
-      set('nav-contact',   L.nav.contact);
+      set('nav-methods',      L.nav.methods);
+      set('nav-about',        L.nav.about);
+      set('nav-testimonials', L.nav.testimonials);
+      set('nav-articles',     L.nav.articles);
+      set('nav-contact',      L.nav.contact);
       /* nav — mobile */
-      set('mob-methods',   L.nav.methods);
-      set('mob-about',     L.nav.about);
-      set('mob-articles',  L.nav.articles);
-      set('mob-contact',   L.nav.contact);
+      set('mob-methods',      L.nav.methods);
+      set('mob-about',        L.nav.about);
+      set('mob-testimonials', L.nav.testimonials);
+      set('mob-articles',     L.nav.articles);
+      set('mob-contact',      L.nav.contact);
       set('lang-toggle',   L.lang_toggle);
 
       /* hero */
@@ -658,6 +763,22 @@
       attr('about-photo',  'alt', L.about.photo_alt);
       html('about-bio',    L.about.bio.map(p => `<p>${p}</p>`).join(''));
       html('about-credentials', L.about.credentials.map(c => `<span class="cred-tag">${c}</span>`).join(''));
+
+      /* media */
+      if (L.media_section) {
+        set('media-label',   L.media_section.label);
+        set('media-heading', L.media_section.heading);
+        set('media-intro',   L.media_section.intro);
+        renderMedia();
+      }
+
+      /* testimonials */
+      if (L.testimonials_section && C.testimonials) {
+        set('testimonials-label',   L.testimonials_section.label);
+        set('testimonials-heading', L.testimonials_section.heading);
+        set('testimonials-intro',   L.testimonials_section.intro);
+        renderTestimonials();
+      }
 
       /* articles */
       set('articles-label',   L.articles_section.label);
@@ -690,6 +811,45 @@
           <h3>${c.title}</h3>
           <p>${c.body}</p>
         </div>`).join('');
+    }
+
+    function renderMedia() {
+      document.getElementById('media-grid').innerHTML = C.media.map(m => {
+        const d = m[lang];
+        return `
+          <div class="media-card">
+            <div class="media-card-header">
+              <div class="media-show-badge">
+                <span class="spotify-dot">
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+                </span>
+                <span class="media-show-name">${d.show}</span>
+              </div>
+              <span class="media-meta">${d.duration}</span>
+            </div>
+            <iframe class="media-embed"
+              src="https://open.spotify.com/embed/episode/${m.spotify_id}?utm_source=generator&theme=0"
+              height="152"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy">
+            </iframe>
+          </div>`;
+      }).join('');
+    }
+
+    function renderTestimonials() {
+      document.getElementById('testimonials-grid').innerHTML = C.testimonials.map((t, i) => {
+        const d = t[lang];
+        return `
+          <div class="testimonial-card reveal" style="--delay:${i * 110}ms">
+            <span class="testimonial-quote-mark">&#8220;</span>
+            <p class="testimonial-text">${d.quote}</p>
+            <div class="testimonial-footer">
+              <span class="testimonial-name">${d.name}</span>
+              <span class="testimonial-descriptor">${d.descriptor}</span>
+            </div>
+          </div>`;
+      }).join('');
     }
 
     function renderArticles(LS) {
